@@ -1,16 +1,40 @@
-# Changelog
+# CHANGELOG.txt
+## PowerShell Logging Module Changelog
 
-## Version 1.3.0
-- Converted the logging script into a PowerShell module.
-- Added module manifest for metadata and versioning.
+### Version 1.5.0 - [2024-11-12]
+- **Refactor:** Complete overhaul of the module using an object-oriented approach.
+- **Encapsulation:** Introduced a `Logger` object to store all configuration settings and methods, reducing reliance on global variables.
+- **Simplified API:** Replaced standalone functions with methods on the `Logger` object (`Initialize`, `WriteLog`, `GetLogFilePath`).
+- **Improved Error Handling:** Enhanced error handling for directory creation and file writing, with user-friendly error messages.
+- **Timestamp-Based Log File Naming:** Log files are now named using timestamps to ensure uniqueness (e.g., `MyScript_20241112_123456.log`).
+- **Enhanced JSON Output:** JSON log entries are formatted with `ConvertTo-Json -Depth 3` for better readability.
+- **CSV Format Enhancement:** Added headers to CSV log files when they are created.
+- **Manifest Update:** Updated `LoggingModule.psd1` to reflect the refactored module, including exported functions and compatible PowerShell editions.
 
-## Version 1.2.0
-- Refactored functions for improved structure.
-- Added JSON and CSV log formats.
+### Version 1.4.0 - [2024-11-10]
+- **Encapsulation:** Introduced `$LoggerConfig` object to hold configuration settings.
+- **Enhanced Error Handling:** Added checks for directory creation and file writing permissions.
+- **Fallback for Script Name:** Added a fallback folder name (`UnknownLogFolder`) if the script name cannot be determined.
+- **Improved Logging Output:** Updated the JSON log format to use `ConvertTo-Json -Depth 3` for more detailed output.
 
-## Version 1.1.0
-- Integrated verbosity settings.
-- Improved error handling and logging features.
+### Version 1.3.0 - [2024-11-08]
+- **Module Conversion:** Converted the logging script into a PowerShell module (`LoggingModule`).
+- **Log File Rotation:** Added support for log file rotation based on maximum file size.
+- **Verbosity Control:** Added verbosity levels (`Silent`, `Minimal`, `Normal`, `Verbose`, `Debug`) for controlling log output.
+- **Multiple Log Formats:** Added support for `Text`, `JSON`, and `CSV` log file formats.
+- **Date and Time Configuration:** Added options for `12hr` and `24hr` date formats and the choice of using UTC or local time.
 
-## Version 1.0.0
-- Initial release with basic logging functionality.
+### Version 1.2.0 - [2024-11-05]
+- **Initial Error Handling:** Added basic error handling for directory creation and file access.
+- **Custom Log Folder:** Allowed setting a custom folder name for logs, defaulting to the script name if not specified.
+- **Basic Configuration Options:** Introduced initial configuration options for log root directory, verbosity, and log file format.
+
+### Version 1.1.0 - [2024-11-03]
+- **Initial Implementation:** Added basic logging functions (`Log-Initialize`, `Write-Log`).
+- **Default Settings:** Set default configuration options for verbosity and log file location.
+- **Basic Log Levels:** Supported basic log levels (`Info`, `Warning`, `Error`).
+
+### Version 1.0.0 - [2024-11-01]
+- **Project Inception:** Initial version of the PowerShell logging module.
+- **Basic Functionality:** Implemented basic logging functionality with text log output.
+
