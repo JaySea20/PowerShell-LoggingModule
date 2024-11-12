@@ -1,0 +1,16 @@
+# Changelog
+
+## Version 1.3.0
+- Converted the logging script into a PowerShell module.
+- Added module manifest for metadata and versioning.
+
+## Version 1.2.0
+- Refactored functions for improved structure.
+- Added JSON and CSV log formats.
+
+## Version 1.1.0
+- Integrated verbosity settings.
+- Improved error handling and logging features.
+
+## Version 1.0.0
+- Initial release with basic logging functionality.
